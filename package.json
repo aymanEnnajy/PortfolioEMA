@@ -1,0 +1,46 @@
+{
+  "name": "3d-portfolio-ayman-ennajy",
+  "version": "1.0.0",
+  "description": "Portfolio 3D immersif avec Three.js et animations avancées",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000 -c-1",
+    "deploy": "npm run build && gh-pages -d .",
+    "lighthouse": "npx lighthouse http://localhost:8000 --view",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "portfolio",
+    "3d",
+    "threejs",
+    "gsap",
+    "web-development",
+    "full-stack",
+    "javascript",
+    "responsive",
+    "animations"
+  ],
+  "author": {
+    "name": "Mohamed Ayman Ennajy",
+    "email": "aymanennajy@gmail.com",
+    "url": "https://github.com/aymanennajy"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aymanennajy/3d-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aymanennajy/3d-portfolio/issues"
+  },
+  "homepage": "https://aymanennajy.github.io/3d-portfolio",
+  "devDependencies": {
+    "gh-pages": "^6.1.0",
+    "http-server": "^14.1.1",
+    "lighthouse": "^11.4.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

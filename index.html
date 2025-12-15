@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohamed Ayman Ennajy - Full Stack Developer Portfolio. Specialized in JavaScript, React, PHP, Python, and modern web development.">
+    <meta name="keywords" content="Full Stack Developer, Web Developer, JavaScript, React, PHP, Python, Portfolio">
+    <meta name="author" content="Mohamed Ayman Ennajy">
+    <meta property="og:title" content="Mohamed Ayman Ennajy - Full Stack Developer">
+    <meta property="og:description" content="Dynamic Full Stack Developer specializing in modern web solutions">
+    <meta property="og:type" content="website">
+    
+    <title>Mohamed Ayman Ennajy | Full Stack Developer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js for additional effects -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+    
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas3d"></canvas>
+    
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="loader"></div>
+            <div class="loader-text">Loading<span class="dots"></span></div>
+            <div class="loader-percentage">0%</div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">MAE</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span>À Propos</span>
+                </a>
+                <a href="#education" class="nav-link" data-section="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Formation</span>
+                </a>
+                <a href="#experience" class="nav-link" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Expérience</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i class="fas fa-code"></i>
+                    <span>Compétences</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Projets</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-label" data-aos="fade-down">
+                        <span class="code-tag">&lt;hello&gt;</span>
+                    </div>
+                    
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                        Mohamed Ayman
+                        <span class="gradient-text">Ennajy</span>
+                    </h1>
+                    
+                    <div class="hero-subtitle-wrapper" data-aos="fade-up" data-aos-delay="200">
+                        <span class="hero-subtitle-prefix">const role = </span>
+                        <div class="hero-subtitle">
+                            <span class="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+                    
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                        Spécialiste en solutions web dynamiques et conviviales, passionné par JavaScript, React, PHP et Python. 
+                        Expert en e-commerce, gestion de bases de données et design responsive.
+                    </p>
+                    
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Me Contacter</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>Voir Mes Projets</span>
+                            <i class="fas fa-code"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social" data-aos="fade-up" data-aos-delay="500">
+                        <a href="https://github.com/aymanennajy" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ayman-ennajy" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:aymanennajy@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-label hero-label-bottom" data-aos="fade-up" data-aos-delay="600">
+                        <span class="code-tag">&lt;/hello&gt;</span>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="floating-code-editor">
+                        <div class="code-editor-header">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="code-filename">developer.js</span>
+                        </div>
+                        <div class="code-editor-content">
+                            <pre><code><span class="code-keyword">class</span> <span class="code-class">Developer</span> {
+  <span class="code-keyword">constructor</span>() {
+    <span class="code-keyword">this</span>.name = <span class="code-string">"Ayman Ennajy"</span>;
+    <span class="code-keyword">this</span>.role = <span class="code-string">"Full Stack"</span>;
+    <span class="code-keyword">this</span>.skills = [
+      <span class="code-string">"JavaScript"</span>,
+      <span class="code-string">"React"</span>,
+      <span class="code-string">"PHP"</span>,
+      <span class="code-string">"Python"</span>
+    ];
+  }
+  
+  <span class="code-method">createAwesome</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">"Amazing Projects"</span>;
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="700">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll</span>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;about&gt;</span>
+                    <h2 class="section-title">
+                        À Propos de <span class="gradient-text">Moi</span>
+                    </h2>
+                    <p class="section-subtitle">Découvrez mon parcours et ma passion</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-image-container" data-aos="fade-right">
+                        <div class="about-image-wrapper">
+                            <div class="image-border"></div>
+                            <div class="about-image">
+                                <img src="../3d-portfolio/assets/images/myface.png" alt="Mohamed Ayman Ennajy">
+                            </div>
+                            <div class="image-decoration">
+                                <span class="decoration-dot"></span>
+                                <span class="decoration-dot"></span>
+                                <span class="decoration-dot"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-value" data-count="50">0</span>+
+                                    <span class="stat-label">Projets</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-value" data-count="5">0</span>+
+                                    <span class="stat-label">Certifications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-text" data-aos="fade-left">
+                        <div class="about-intro">
+                            <h3>Full Stack Developer Passionné</h3>
+                            <p>
+                                Je suis un développeur Full Stack dynamique, spécialisé dans la création de solutions web 
+                                conviviales et performantes. Ma passion pour le code se traduit par l'utilisation de 
+                                technologies modernes comme <strong>JavaScript</strong>, <strong>React</strong>, 
+                                <strong>PHP</strong> et <strong>Python</strong>.
+                            </p>
+                        </div>
+                        
+                        <div class="about-details">
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Expertise E-Commerce</h4>
+                                    <p>Développement de solutions e-commerce complètes avec gestion de panier, paiements et inventaire</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Gestion de Bases de Données</h4>
+                                    <p>Conception et optimisation de bases de données MySQL pour des performances maximales</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Design Responsive</h4>
+                                    <p>Création d'interfaces utilisateur modernes et adaptatives pour tous les appareils</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Applications Scalables</h4>
+                                    <p>Développement d'applications haute performance et évolutives selon les meilleures pratiques</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-cta">
+                            <a href="#contact" class="btn btn-primary">
+                                <span>Travaillons Ensemble</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#projects" class="btn btn-outline">
+                                <span>Voir Mon Travail</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-footer" data-aos="fade-up">
+                    <span class="section-tag">&lt;/about&gt;</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;education&gt;</span>
+                    <h2 class="section-title">
+                        Formation & <span class="gradient-text">Certifications</span>
+                    </h2>
+                    <p class="section-subtitle">Mon parcours académique et professionnel</p>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Main Diploma -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-marker">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2022 - 2024</div>
+                            <h3>Technicien Spécialisé en Développement Informatique</h3>
+                            <div class="timeline-institution">
+                                <i class="fas fa-university"></i>
+                                <span>Formation Professionnelle</span>
+                            </div>
+                            <p>
+                                Ce diplôme m'a offert une formation solide en technologies de l'information et a éveillé ma passion 
+                                pour le développement de logiciels et de sites web. J'ai acquis une expérience pratique grâce à des 
+                                stages qui ont renforcé mes compétences techniques et professionnelles.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Développement Web</span>
+                                <span class="tag">Bases de Données</span>
+                                <span class="tag">Gestion de Projet</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meta React Advanced -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024</div>
+                            <h3>React Advanced</h3>
+                            <div class="timeline-institution">
+                                <i class="fab fa-meta"></i>
+                                <span>Meta</span>
+                            </div>
+                            <p>
+                                Certification démontrant une expertise dans la création d'applications React complexes, incluant la gestion 
+                                d'état, l'optimisation des performances, les hooks avancés et les meilleures pratiques pour un développement 
+                                front-end évolutif.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Hooks</span>
+                                <span class="tag">State Management</span>
+                                <span class="tag">Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- JavaScript Intermediate -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024</div>
+                            <h3>JavaScript Intermediate</h3>
+                            <div class="timeline-institution">
+                                <i class="fas fa-code"></i>
+                                <span>Sololearn</span>
+                            </div>
+                            <p>
+                                Certification validant une maîtrise intermédiaire de JavaScript, incluant la POO, la programmation asynchrone, 
+                                la manipulation avancée du DOM et les fonctionnalités modernes ES6+.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">ES6+</span>
+                                <span class="tag">Async/Await</span>
+                                <span class="tag">OOP</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meta Programming in Python -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023</div>
+                            <h3>Programming in Python</h3>
+                            <div class="timeline-institution">
+                                <i class="fab fa-meta"></i>
+                                <span>Meta</span>
+                            </div>
+                            <p>
+                                Certification Meta démontrant ma compétence en écriture de code efficace, implémentation d'algorithmes, 
+                                utilisation de bibliothèques Python et résolution de problèmes de développement logiciel.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Algorithmes</span>
+                                <span class="tag">Libraries</span>
+                                <span class="tag">Problem Solving</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Johns Hopkins Web Development -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023</div>
+                            <h3>HTML, CSS, and JavaScript for Web Developers</h3>
+                            <div class="timeline-institution">
+                                <i class="fas fa-university"></i>
+                                <span>Johns Hopkins University</span>
+                            </div>
+                            <p>
+                                Formation complète en technologies essentielles du développement web. Compétences acquises incluant 
+                                HTML5, CSS3, JavaScript moderne, et création de sites web conviviaux et professionnels.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Meta Back-End Development -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                        <div class="timeline-marker">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023</div>
+                            <h3>Introduction to Back-End Development</h3>
+                            <div class="timeline-institution">
+                                <i class="fab fa-meta"></i>
+                                <span>Meta</span>
+                            </div>
+                            <p>
+                                Certification validant l'expertise en développement back-end, incluant la programmation côté serveur, 
+                                la gestion de bases de données, le développement d'API et l'optimisation de la sécurité et des performances.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Server-Side</span>
+                                <span class="tag">Database</span>
+                                <span class="tag">API Development</span>
+                                <span class="tag">Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-footer" data-aos="fade-up">
+                    <span class="section-tag">&lt;/education&gt;</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;experience&gt;</span>
+                    <h2 class="section-title">
+                        Expérience <span class="gradient-text">Professionnelle</span>
+                    </h2>
+                    <p class="section-subtitle">Mon parcours et mes réalisations</p>
+                </div>
+                
+                <div class="experience-grid">
+                    <!-- WordPress Freelance -->
+                    <div class="experience-card" data-aos="fade-up">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fab fa-wordpress"></i>
+                            </div>
+                            <div class="experience-period">
+                                <i class="far fa-calendar"></i>
+                                <span>Oct 2024 - Déc 2024</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h3>WordPress Developer</h3>
+                            <div class="experience-company">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Freelance</span>
+                            </div>
+                            <p>
+                                "AjouterAuPanier" - Site e-commerce développé avec interface responsive et système de gestion 
+                                de panier en ligne. Création complète front-end (HTML, CSS) et back-end (PHP, MySQL) pour gérer 
+                                produits, commandes et utilisateurs, avec optimisation de la base de données pour des performances fluides.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="skill-badge">WordPress</span>
+                                <span class="skill-badge">PHP</span>
+                                <span class="skill-badge">MySQL</span>
+                                <span class="skill-badge">E-Commerce</span>
+                                <span class="skill-badge">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HCP Census Agent -->
+                    <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="experience-period">
+                                <i class="far fa-calendar"></i>
+                                <span>Août 2024 - Sept 2024</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h3>Agent Recenseur</h3>
+                            <div class="experience-company">
+                                <i class="fas fa-building"></i>
+                                <span>HCP, Maroc - Recensement Général de la Population</span>
+                            </div>
+                            <p>
+                                Collecte et enregistrement de données démographiques et socio-économiques lors du Recensement Général 
+                                de la Population et de l'Habitat. Assurance de la précision des données et facilitation de la communication 
+                                avec les résidents.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="skill-badge">Collecte de Données</span>
+                                <span class="skill-badge">Communication</span>
+                                <span class="skill-badge">Précision</span>
+                                <span class="skill-badge">Organisation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CESARO Full Stack -->
+                    <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="experience-period">
+                                <i class="far fa-calendar"></i>
+                                <span>Jan 2024 - Mai 2024</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h3>Full Stack Developer</h3>
+                            <div class="experience-company">
+                                <i class="fas fa-building"></i>
+                                <span>CESARO</span>
+                            </div>
+                            <p>
+                                Prise en charge complète de la création de sites web, développement front-end (HTML, CSS, Bootstrap) 
+                                et back-end (PHP, MySQL). Conception et implémentation de solutions web complètes et performantes.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="skill-badge">HTML/CSS</span>
+                                <span class="skill-badge">Bootstrap</span>
+                                <span class="skill-badge">PHP</span>
+                                <span class="skill-badge">MySQL</span>
+                                <span class="skill-badge">Full Stack</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- ICF Front-End -->
+                    <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="experience-header">
+                            <div class="experience-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="experience-period">
+                                <i class="far fa-calendar"></i>
+                                <span>Août 2023 - Sept 2023</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <h3>Front-End Developer</h3>
+                            <div class="experience-company">
+                                <i class="fas fa-building"></i>
+                                <span>ICF</span>
+                            </div>
+                            <p>
+                                Création d'interfaces utilisateur interactives et responsive avec HTML, CSS et JavaScript. 
+                                Collaboration avec l'équipe back-end pour intégrer les fonctionnalités et optimiser l'expérience 
+                                utilisateur sur différents appareils et plateformes.
+                            </p>
+                            <div class="experience-skills">
+                                <span class="skill-badge">HTML/CSS</span>
+                                <span class="skill-badge">JavaScript</span>
+                                <span class="skill-badge">Responsive Design</span>
+                                <span class="skill-badge">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-footer" data-aos="fade-up">
+                    <span class="section-tag">&lt;/experience&gt;</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;skills&gt;</span>
+                    <h2 class="section-title">
+                        Compétences & <span class="gradient-text">Technologies</span>
+                    </h2>
+                    <p class="section-subtitle">Mon arsenal technologique</p>
+                </div>
+                
+                <div class="skills-container">
+                    <!-- Front-End Skills -->
+                    <div class="skills-category" data-aos="fade-up">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>Front-End Development</h3>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HTML5</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95"></div>
+                                    </div>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>CSS3</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-bootstrap"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Bootstrap</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>React</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="82"></div>
+                                    </div>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back-End Skills -->
+                    <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Back-End Development</h3>
+                        </div>
+                        
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>PHP</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="87"></div>
+                                    </div>
+                                    <span class="skill-percentage">87%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Python</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>MySQL</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="83"></div>
+                                    </div>
+                                    <span class="skill-percentage">83%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Java</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Node.js</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="78"></div>
+                                    </div>
+                                    <span class="skill-percentage">78%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Technologies -->
+                <div class="technologies-cloud" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Autres Technologies & Outils</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Git & GitHub</span>
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Responsive Design</span>
+                        <span class="tech-tag">SEO</span>
+                        <span class="tech-tag">Agile/Scrum</span>
+                        <span class="tech-tag">VS Code</span>
+                        <span class="tech-tag">Postman</span>
+                        <span class="tech-tag">Chrome DevTools</span>
+                    </div>
+                </div>
+                
+                <div class="section-footer" data-aos="fade-up">
+                    <span class="section-tag">&lt;/skills&gt;</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;projects&gt;</span>
+                    <h2 class="section-title">
+                        Mes <span class="gradient-text">Projets</span>
+                    </h2>
+                    <p class="section-subtitle">Découvrez mes réalisations récentes</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- E-Commerce Project -->
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop" alt="AjouterAuPanier E-Commerce">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Voir le projet">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Code source">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">E-Commerce</div>
+                            <h3>AjouterAuPanier</h3>
+                            <p>
+                                Site e-commerce complet avec interface responsive, système de panier en ligne, 
+                                gestion de produits, commandes et utilisateurs. Backend PHP/MySQL optimisé.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Project -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Portfolio Website">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/MyPortfolio/" target="_blank" class="project-link" aria-label="Voir le projet">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/aymanennajy/MyPortfolio" target="_blank" class="project-link" aria-label="Code source">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Portfolio</div>
+                            <h3>Portfolio Personnel</h3>
+                            <p>
+                                Portfolio interactif présentant mes compétences, expériences et projets. 
+                                Design moderne et responsive avec animations fluides.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Web Application Project -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop" alt="Web Application">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Voir le projet">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Code source">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Web App</div>
+                            <h3>Application Web Full Stack</h3>
+                            <p>
+                                Application web complète avec interface utilisateur React, backend PHP 
+                                et base de données MySQL. Gestion d'utilisateurs et authentification.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dashboard Project -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Dashboard">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" aria-label="Voir le projet">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="#" class="project-link" aria-label="Code source">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Dashboard</div>
+                            <h3>Dashboard Analytique</h3>
+                            <p>
+                                Tableau de bord interactif pour la visualisation de données avec graphiques 
+                                dynamiques, statistiques en temps réel et interface utilisateur intuitive.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Chart.js</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projects-cta" data-aos="fade-up">
+                    <a href="https://github.com/aymanennajy" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i>
+                        <span>Voir Plus sur GitHub</span>
+                    </a>
+                </div>
+                
+                <div class="section-footer" data-aos="fade-up">
+                    <span class="section-tag">&lt;/projects&gt;</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;contact&gt;</span>
+                    <h2 class="section-title">
+                        Prenons <span class="gradient-text">Contact</span>
+                    </h2>
+                    <p class="section-subtitle">Discutons de votre prochain projet</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-intro">
+                            <h3>Travaillons Ensemble</h3>
+                            <p>
+                                Je suis toujours ouvert à de nouvelles opportunités et collaborations. 
+                                N'hésitez pas à me contacter pour discuter de votre projet.
+                            </p>
+                        </div>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <a href="mailto:aymanennajy@gmail.com">aymanennajy@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Localisation</h4>
+                                    <p>Maroc</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Disponibilité</h4>
+                                    <p>Disponible pour freelance</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h4>Suivez-moi</h4>
+                            <div class="social-links">
+                                <a href="https://github.com/aymanennajy" target="_blank" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/ayman-ennajy" target="_blank" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="mailto:aymanennajy@gmail.com" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="https://twitter.com/aymanennajy" target="_blank" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container" data-aos="fade-left">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom Complet</label>
+                                <input type="text" id="name" name="name" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" required>
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Envoyer le Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        
+                        <div class="form-success" id="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Envoyé !</h3>
+                            <p>Merci de m'avoir contacté. Je vous répondrai dès que possible.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-footer" data-aos="fade-up">
+                    <span class="section-tag">&lt;/contact&gt;</span>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">MAE</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </div>
+                    <p>Full Stack Developer passionné par la création de solutions web innovantes</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <a href="#home">Accueil</a>
+                    <a href="#about">À Propos</a>
+                    <a href="#skills">Compétences</a>
+                    <a href="#projects">Projets</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Réseaux Sociaux</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/aymanennajy" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ayman-ennajy" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:aymanennajy@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mohamed Ayman Ennajy. Tous droits réservés.</p>
+                <p>Conçu avec <i class="fas fa-heart"></i> et <i class="fas fa-code"></i></p>
+            </div>
+        </div>
+    </footer>
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+    
+    <!-- Scripts -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
