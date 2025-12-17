@@ -1951,6 +1951,52 @@ body {
     }
 }
 
+/* === INTERMEDIATE RESPONSIVE (PC/TABLET) === */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 0.25rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        gap: 0.35rem;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-logo img {
+        width: 60px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 814px) {
+    .nav-link {
+        font-size: 0.55rem;
+    }
+
+    .nav-menu i {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 815px) and (max-width: 991px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.75rem;
+    }
+}
+
 @media (min-width: 348px) and (max-width: 468px) {
     .nav-logo img {
         width: 30vw;
