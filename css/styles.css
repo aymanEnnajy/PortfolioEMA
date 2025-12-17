@@ -1855,3 +1855,22 @@ body {
   background: #3730a3;
   transform: scale(1.1);
 }
+
+
+.experience-list{
+    padding-left: 12px;
+}
+.experience-list li{
+    line-height: 37px;
+}
+.nav-logo img{
+    width: 8vw;
+    margin-top: -29px;
+    margin-bottom: -22px;
+}
+@media (max-width: 768px) {
+    .nav-logo img{
+        width: 20vw;
+        margin-top: -24px;
+    }
+}
