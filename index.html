@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mohamed Ayman Ennajy - Full Stack Developer Portfolio. Specialized in JavaScript, React, PHP, Python, and modern web development.">
+    <meta name="description"
+        content="Mohamed Ayman Ennajy - Full Stack Developer Portfolio. Specialized in JavaScript, React, PHP, Python, and modern web development.">
     <meta name="keywords" content="Full Stack Developer, Web Developer, JavaScript, React, PHP, Python, Portfolio">
     <meta name="author" content="Mohamed Ayman Ennajy">
     <meta property="og:title" content="Mohamed Ayman Ennajy - Full Stack Developer">
     <meta property="og:description" content="Dynamic Full Stack Developer specializing in modern web solutions">
     <meta property="og:type" content="website">
-    
+
     <title>Mohamed Ayman Ennajy | Full Stack Developer</title>
     <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
+
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Particles.js for additional effects -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body data-theme="dark">
-    
+
     <!-- 3D Canvas Background -->
     <canvas id="canvas3d"></canvas>
-    
+
     <!-- Particle Background -->
     <div id="particles-js"></div>
-    
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader-container">
@@ -50,14 +55,14 @@
             <div class="loader-percentage">0%</div>
         </div>
     </div>
-    
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="assets/images/logo.png" alt="Logo">
             </div>
-            
+
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active" data-section="home">
                     <i class="fas fa-home"></i>
@@ -88,7 +93,7 @@
                     <span>Contact</span>
                 </a>
             </div>
-            
+
             <div class="nav-controls">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-sun"></i>
@@ -102,10 +107,10 @@
             </div>
         </div>
     </nav>
-    
+
     <!-- Main Content -->
     <main class="main-content">
-        
+
         <!-- Hero Section -->
         <section id="home" class="section hero-section active">
             <div class="hero-container">
@@ -113,12 +118,12 @@
                     <div class="hero-label" data-aos="fade-down">
                         <span class="code-tag">&lt;hello&gt;</span>
                     </div>
-                    
+
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
                         Mohamed Ayman
                         <span class="gradient-text">Ennajy</span>
                     </h1>
-                    
+
                     <div class="hero-subtitle-wrapper" data-aos="fade-up" data-aos-delay="200">
                         <span class="hero-subtitle-prefix">const role = </span>
                         <div class="hero-subtitle">
@@ -126,12 +131,13 @@
                             <span class="cursor">|</span>
                         </div>
                     </div>
-                    
+
                     <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
-                        Spécialiste en solutions web dynamiques et conviviales, passionné par JavaScript, React, PHP et Python. 
+                        Spécialiste en solutions web dynamiques et conviviales, passionné par JavaScript, React, PHP et
+                        Python.
                         Expert en e-commerce, gestion de bases de données et design responsive.
                     </p>
-                    
+
                     <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
                         <a href="#contact" class="btn btn-primary">
                             <span>Me Contacter</span>
@@ -142,24 +148,26 @@
                             <i class="fas fa-code"></i>
                         </a>
                     </div>
-                    
+
                     <div class="hero-social" data-aos="fade-up" data-aos-delay="500">
-                        <a href="https://github.com/aymanennajy" target="_blank" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/aymanennajy" target="_blank" class="social-link"
+                            aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com/in/ayman-ennajy" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <a href="https://linkedin.com/in/ayman-ennajy" target="_blank" class="social-link"
+                            aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="mailto:aymanennajy@gmail.com" class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
-                    
+
                     <div class="hero-label hero-label-bottom" data-aos="fade-up" data-aos-delay="600">
                         <span class="code-tag">&lt;/hello&gt;</span>
                     </div>
                 </div>
-                
+
                 <div class="hero-visual">
                     <div class="floating-code-editor">
                         <div class="code-editor-header">
@@ -189,7 +197,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="700">
                 <div class="scroll-mouse">
                     <div class="scroll-wheel"></div>
@@ -197,7 +205,7 @@
                 <span class="scroll-text">Scroll</span>
             </div>
         </section>
-        
+
         <!-- About Section -->
         <section id="about" class="section about-section">
             <div class="container">
@@ -208,7 +216,7 @@
                     </h2>
                     <p class="section-subtitle">Découvrez mon parcours et ma passion</p>
                 </div>
-                
+
                 <div class="about-content">
                     <div class="about-image-container" data-aos="fade-right">
                         <div class="about-image-wrapper">
@@ -222,7 +230,7 @@
                                 <span class="decoration-dot"></span>
                             </div>
                         </div>
-                        
+
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <div class="stat-icon">
@@ -244,52 +252,57 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="about-text" data-aos="fade-left">
                         <div class="about-intro">
                             <h3>Full Stack Developer Passionné</h3>
                             <p>
-                                Je suis un développeur Full Stack dynamique, spécialisé dans la création de solutions web 
-                                conviviales et performantes. Ma passion pour le code se traduit par l'utilisation de 
-                                technologies modernes comme <strong>JavaScript</strong>, <strong>React</strong>, 
+                                Je suis un développeur Full Stack dynamique, spécialisé dans la création de solutions
+                                web
+                                conviviales et performantes. Ma passion pour le code se traduit par l'utilisation de
+                                technologies modernes comme <strong>JavaScript</strong>, <strong>React</strong>,
                                 <strong>PHP</strong> et <strong>Python</strong>.
                             </p>
                         </div>
-                        
+
                         <div class="about-details">
                             <div class="detail-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>Expertise E-Commerce</h4>
-                                    <p>Développement de solutions e-commerce complètes avec gestion de panier, paiements et inventaire</p>
+                                    <p>Développement de solutions e-commerce complètes avec gestion de panier, paiements
+                                        et inventaire</p>
                                 </div>
                             </div>
-                            
+
                             <div class="detail-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>Gestion de Bases de Données</h4>
-                                    <p>Conception et optimisation de bases de données MySQL pour des performances maximales</p>
+                                    <p>Conception et optimisation de bases de données MySQL pour des performances
+                                        maximales</p>
                                 </div>
                             </div>
-                            
+
                             <div class="detail-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>Design Responsive</h4>
-                                    <p>Création d'interfaces utilisateur modernes et adaptatives pour tous les appareils</p>
+                                    <p>Création d'interfaces utilisateur modernes et adaptatives pour tous les appareils
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <div class="detail-item">
                                 <i class="fas fa-check-circle"></i>
                                 <div>
                                     <h4>Applications Scalables</h4>
-                                    <p>Développement d'applications haute performance et évolutives selon les meilleures pratiques</p>
+                                    <p>Développement d'applications haute performance et évolutives selon les meilleures
+                                        pratiques</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="about-cta">
                             <a href="#contact" class="btn btn-primary">
                                 <span>Travaillons Ensemble</span>
@@ -301,13 +314,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section-footer" data-aos="fade-up">
                     <span class="section-tag">&lt;/about&gt;</span>
                 </div>
             </div>
         </section>
-        
+
         <!-- Education Section -->
         <section id="education" class="section education-section">
             <div class="container">
@@ -318,7 +331,7 @@
                     </h2>
                     <p class="section-subtitle">Mon parcours académique et professionnel</p>
                 </div>
-                
+
                 <div class="timeline">
                     <!-- Main Diploma -->
                     <div class="timeline-item" data-aos="fade-up">
@@ -333,8 +346,10 @@
                                 <span>Formation Professionnelle</span>
                             </div>
                             <p>
-                                Ce diplôme m'a offert une formation solide en technologies de l'information et a éveillé ma passion 
-                                pour le développement de logiciels et de sites web. J'ai acquis une expérience pratique grâce à des 
+                                Ce diplôme m'a offert une formation solide en technologies de l'information et a éveillé
+                                ma passion
+                                pour le développement de logiciels et de sites web. J'ai acquis une expérience pratique
+                                grâce à des
                                 stages qui ont renforcé mes compétences techniques et professionnelles.
                             </p>
                             <div class="timeline-tags">
@@ -344,7 +359,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Meta React Advanced -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-marker">
@@ -358,8 +373,10 @@
                                 <span>Meta</span>
                             </div>
                             <p>
-                                Certification démontrant une expertise dans la création d'applications React complexes, incluant la gestion 
-                                d'état, l'optimisation des performances, les hooks avancés et les meilleures pratiques pour un développement 
+                                Certification démontrant une expertise dans la création d'applications React complexes,
+                                incluant la gestion
+                                d'état, l'optimisation des performances, les hooks avancés et les meilleures pratiques
+                                pour un développement
                                 front-end évolutif.
                             </p>
                             <div class="timeline-tags">
@@ -370,7 +387,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- JavaScript Intermediate -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="timeline-marker">
@@ -384,7 +401,8 @@
                                 <span>Sololearn</span>
                             </div>
                             <p>
-                                Certification validant une maîtrise intermédiaire de JavaScript, incluant la POO, la programmation asynchrone, 
+                                Certification validant une maîtrise intermédiaire de JavaScript, incluant la POO, la
+                                programmation asynchrone,
                                 la manipulation avancée du DOM et les fonctionnalités modernes ES6+.
                             </p>
                             <div class="timeline-tags">
@@ -395,7 +413,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Meta Programming in Python -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="timeline-marker">
@@ -409,8 +427,10 @@
                                 <span>Meta</span>
                             </div>
                             <p>
-                                Certification Meta démontrant ma compétence en écriture de code efficace, implémentation d'algorithmes, 
-                                utilisation de bibliothèques Python et résolution de problèmes de développement logiciel.
+                                Certification Meta démontrant ma compétence en écriture de code efficace, implémentation
+                                d'algorithmes,
+                                utilisation de bibliothèques Python et résolution de problèmes de développement
+                                logiciel.
                             </p>
                             <div class="timeline-tags">
                                 <span class="tag">Python</span>
@@ -420,7 +440,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Johns Hopkins Web Development -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
                         <div class="timeline-marker">
@@ -434,7 +454,8 @@
                                 <span>Johns Hopkins University</span>
                             </div>
                             <p>
-                                Formation complète en technologies essentielles du développement web. Compétences acquises incluant 
+                                Formation complète en technologies essentielles du développement web. Compétences
+                                acquises incluant
                                 HTML5, CSS3, JavaScript moderne, et création de sites web conviviaux et professionnels.
                             </p>
                             <div class="timeline-tags">
@@ -445,7 +466,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Meta Back-End Development -->
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
                         <div class="timeline-marker">
@@ -459,8 +480,10 @@
                                 <span>Meta</span>
                             </div>
                             <p>
-                                Certification validant l'expertise en développement back-end, incluant la programmation côté serveur, 
-                                la gestion de bases de données, le développement d'API et l'optimisation de la sécurité et des performances.
+                                Certification validant l'expertise en développement back-end, incluant la programmation
+                                côté serveur,
+                                la gestion de bases de données, le développement d'API et l'optimisation de la sécurité
+                                et des performances.
                             </p>
                             <div class="timeline-tags">
                                 <span class="tag">Server-Side</span>
@@ -471,13 +494,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section-footer" data-aos="fade-up">
                     <span class="section-tag">&lt;/education&gt;</span>
                 </div>
             </div>
         </section>
-        
+
         <!-- Experience Section -->
         <section id="experience" class="section experience-section">
             <div class="container">
@@ -488,143 +511,143 @@
                     </h2>
                     <p class="section-subtitle">Mon parcours et mes réalisations</p>
                 </div>
-                
+
                 <div class="experience-grid">
                     <!-- WordPress Freelance -->
                     <div class="experience-card" data-aos="fade-up">
-    <div class="experience-header">
-        <div class="experience-icon"></div>
+                        <div class="experience-header">
+                            <div class="experience-icon"></div>
 
-        <div class="experience-period">
-            <span>27 Octobre 2025 – Maintenant</span>
-        </div>
-    </div>
+                            <div class="experience-period">
+                                <span>27 Octobre 2025 – Maintenant</span>
+                            </div>
+                        </div>
 
-    <div class="experience-content">
-        <h3>Développeur Full-Stack</h3>
+                        <div class="experience-content">
+                            <h3>Développeur Full-Stack</h3>
 
-        <div class="experience-company">
-            <span>Jobintech – Ynov Campus</span>
-        </div>
+                            <div class="experience-company">
+                                <span>Jobintech – Ynov Campus</span>
+                            </div>
 
-        <ul class="experience-list">
-            <li>Développement d’applications web complètes Front-end & Back-end</li>
-            <li>Conception et développement d’API REST sécurisées avec Node.js & Express.js</li>
-            <li>Base de données MongoDB : modèles Mongoose, requêtes CRUD, agrégations</li>
-        </ul>
-<br>
-        <div class="experience-skills">
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">Express.js</span>
-            <span class="skill-badge">MongoDB</span>
-            <span class="skill-badge">Mongoose</span>
-            <span class="skill-badge">API REST</span>
-            <span class="skill-badge">Full-Stack</span>
-        </div>
-    </div>
-</div>
+                            <ul class="experience-list">
+                                <li>Développement d’applications web complètes Front-end & Back-end</li>
+                                <li>Conception et développement d’API REST sécurisées avec Node.js & Express.js</li>
+                                <li>Base de données MongoDB : modèles Mongoose, requêtes CRUD, agrégations</li>
+                            </ul>
+                            <br>
+                            <div class="experience-skills">
+                                <span class="skill-badge">Node.js</span>
+                                <span class="skill-badge">Express.js</span>
+                                <span class="skill-badge">MongoDB</span>
+                                <span class="skill-badge">Mongoose</span>
+                                <span class="skill-badge">API REST</span>
+                                <span class="skill-badge">Full-Stack</span>
+                            </div>
+                        </div>
+                    </div>
 
-                    
+
                     <div class="experience-card" data-aos="fade-up">
-    <div class="experience-header">
-        <div class="experience-icon"></div>
-        <div class="experience-period">
-            <span>30 septembre 2024 – 16 octobre 2025</span>
-        </div>
-    </div>
+                        <div class="experience-header">
+                            <div class="experience-icon"></div>
+                            <div class="experience-period">
+                                <span>30 septembre 2024 – 16 octobre 2025</span>
+                            </div>
+                        </div>
 
-    <div class="experience-content">
-        <h3>Développeur Web</h3>
+                        <div class="experience-content">
+                            <h3>Développeur Web</h3>
 
-        <div class="experience-company">
-            <span>Bureau Global Technology</span>
-        </div>
+                            <div class="experience-company">
+                                <span>Bureau Global Technology</span>
+                            </div>
 
-        <ul class="experience-list">
-            <li>Développement, déploiement et maintenance de solutions web</li>
-            <li>Gestion complète de projets : analyse et production</li>
-            <li>Optimisation des performances (-40% temps de chargement) et SEO</li>
-        </ul>
+                            <ul class="experience-list">
+                                <li>Développement, déploiement et maintenance de solutions web</li>
+                                <li>Gestion complète de projets : analyse et production</li>
+                                <li>Optimisation des performances (-40% temps de chargement) et SEO</li>
+                            </ul>
 
-        <div class="experience-skills">
-            <span class="skill-badge">Développement Web</span>
-            <span class="skill-badge">Performance</span>
-            <span class="skill-badge">SEO</span>
-            <span class="skill-badge">Gestion de projet</span>
-        </div>
-    </div>
-</div>
-<div class="experience-card" data-aos="fade-up">
-    <div class="experience-header">
-        <div class="experience-icon"></div>
-        <div class="experience-period">
-            <span>Août 2023 – Octobre 2023</span>
-        </div>
-    </div>
+                            <div class="experience-skills">
+                                <span class="skill-badge">Développement Web</span>
+                                <span class="skill-badge">Performance</span>
+                                <span class="skill-badge">SEO</span>
+                                <span class="skill-badge">Gestion de projet</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card" data-aos="fade-up">
+                        <div class="experience-header">
+                            <div class="experience-icon"></div>
+                            <div class="experience-period">
+                                <span>Août 2023 – Octobre 2023</span>
+                            </div>
+                        </div>
 
-    <div class="experience-content">
-        <h3>Développeur Web</h3>
+                        <div class="experience-content">
+                            <h3>Développeur Web</h3>
 
-        <div class="experience-company">
-            <span>ICF Marrakech, Maroc</span>
-        </div>
+                            <div class="experience-company">
+                                <span>ICF Marrakech, Maroc</span>
+                            </div>
 
-        <ul class="experience-list">
-            <li>Développement d’interfaces responsives (HTML, CSS, Bootstrap)</li>
-            <li>Tests fonctionnels et correction de bugs dans un dashboard</li>
-            <li>Mise à jour de produits sur un site e-commerce</li>
-            <li>Maintenance et amélioration des performances des sites web</li>
-        </ul>
+                            <ul class="experience-list">
+                                <li>Développement d’interfaces responsives (HTML, CSS, Bootstrap)</li>
+                                <li>Tests fonctionnels et correction de bugs dans un dashboard</li>
+                                <li>Mise à jour de produits sur un site e-commerce</li>
+                                <li>Maintenance et amélioration des performances des sites web</li>
+                            </ul>
 
-        <div class="experience-skills">
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">CSS</span>
-            <span class="skill-badge">Bootstrap</span>
-            <span class="skill-badge">E-commerce</span>
-            <span class="skill-badge">Maintenance</span>
-        </div>
-    </div>
-</div>
-<div class="experience-card" data-aos="fade-up">
-    <div class="experience-header">
-        <div class="experience-icon"></div>
-        <div class="experience-period">
-            <span>Janvier 2022 – Août 2023</span>
-        </div>
-    </div>
+                            <div class="experience-skills">
+                                <span class="skill-badge">HTML</span>
+                                <span class="skill-badge">CSS</span>
+                                <span class="skill-badge">Bootstrap</span>
+                                <span class="skill-badge">E-commerce</span>
+                                <span class="skill-badge">Maintenance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-card" data-aos="fade-up">
+                        <div class="experience-header">
+                            <div class="experience-icon"></div>
+                            <div class="experience-period">
+                                <span>Janvier 2022 – Août 2023</span>
+                            </div>
+                        </div>
 
-    <div class="experience-content">
-        <h3>Développeur Frontend</h3>
+                        <div class="experience-content">
+                            <h3>Développeur Frontend</h3>
 
-        <div class="experience-company">
-            <span>Isolus Tech</span>
-        </div>
+                            <div class="experience-company">
+                                <span>Isolus Tech</span>
+                            </div>
 
-        <ul class="experience-list">
-            <li>Développement et mise à jour de sites web (HTML, CSS, WordPress)</li>
-            <li>Intégration de maquettes et amélioration de l’interface utilisateur</li>
-            <li>Gestion du contenu et maintenance des sites WordPress</li>
-            <li>Optimisation de la performance et de l’affichage responsive</li>
-        </ul>
+                            <ul class="experience-list">
+                                <li>Développement et mise à jour de sites web (HTML, CSS, WordPress)</li>
+                                <li>Intégration de maquettes et amélioration de l’interface utilisateur</li>
+                                <li>Gestion du contenu et maintenance des sites WordPress</li>
+                                <li>Optimisation de la performance et de l’affichage responsive</li>
+                            </ul>
 
-        <div class="experience-skills">
-            <span class="skill-badge">HTML</span>
-            <span class="skill-badge">CSS</span>
-            <span class="skill-badge">WordPress</span>
-            <span class="skill-badge">UI</span>
-            <span class="skill-badge">Responsive</span>
-        </div>
-    </div>
-</div>
+                            <div class="experience-skills">
+                                <span class="skill-badge">HTML</span>
+                                <span class="skill-badge">CSS</span>
+                                <span class="skill-badge">WordPress</span>
+                                <span class="skill-badge">UI</span>
+                                <span class="skill-badge">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-                
+
                 <div class="section-footer" data-aos="fade-up">
                     <span class="section-tag">&lt;/experience&gt;</span>
                 </div>
             </div>
         </section>
-        
+
         <!-- Skills Section -->
         <section id="skills" class="section skills-section">
             <div class="container">
@@ -635,7 +658,7 @@
                     </h2>
                     <p class="section-subtitle">Mon arsenal technologique</p>
                 </div>
-                
+
                 <div class="skills-container">
                     <!-- Front-End Skills -->
                     <div class="skills-category" data-aos="fade-up">
@@ -645,7 +668,7 @@
                             </div>
                             <h3>Front-End Development</h3>
                         </div>
-                        
+
                         <div class="skills-grid">
                             <div class="skill-card">
                                 <div class="skill-icon">
@@ -659,7 +682,7 @@
                                     <span class="skill-percentage">95%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-css3-alt"></i>
@@ -672,7 +695,7 @@
                                     <span class="skill-percentage">90%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-js"></i>
@@ -685,7 +708,7 @@
                                     <span class="skill-percentage">88%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-bootstrap"></i>
@@ -698,7 +721,7 @@
                                     <span class="skill-percentage">85%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-react"></i>
@@ -713,7 +736,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Back-End Skills -->
                     <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
                         <div class="category-header">
@@ -722,7 +745,7 @@
                             </div>
                             <h3>Back-End Development</h3>
                         </div>
-                        
+
                         <div class="skills-grid">
                             <div class="skill-card">
                                 <div class="skill-icon">
@@ -736,7 +759,7 @@
                                     <span class="skill-percentage">87%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-python"></i>
@@ -749,7 +772,7 @@
                                     <span class="skill-percentage">85%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fas fa-database"></i>
@@ -762,7 +785,7 @@
                                     <span class="skill-percentage">83%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-java"></i>
@@ -775,7 +798,7 @@
                                     <span class="skill-percentage">75%</span>
                                 </div>
                             </div>
-                            
+
                             <div class="skill-card">
                                 <div class="skill-icon">
                                     <i class="fab fa-node-js"></i>
@@ -788,38 +811,38 @@
                                     <span class="skill-percentage">78%</span>
                                 </div>
                             </div>
-                            
-                            <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <div class="skill-info">
-                                <h4>Express.js</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="70"></div>
-                                </div>
-                                <span class="skill-percentage">65%</span>
-                            </div>
-                        </div>
 
-                        <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <div class="skill-info">
-                            <h4>MongoDB</h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="65"></div>
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>Express.js</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70"></div>
+                                    </div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
                             </div>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                    </div>
+
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>MongoDB</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="65"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </div>
 
 
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Additional Technologies -->
                 <div class="technologies-cloud" data-aos="fade-up" data-aos-delay="400">
                     <h3>Autres Technologies & Outils</h3>
@@ -836,13 +859,13 @@
                         <span class="tech-tag">Chrome DevTools</span>
                     </div>
                 </div>
-                
+
                 <div class="section-footer" data-aos="fade-up">
                     <span class="section-tag">&lt;/skills&gt;</span>
                 </div>
             </div>
         </section>
-        
+
         <!-- Projects Section -->
         <section id="projects" class="section projects-section">
             <div class="container">
@@ -853,12 +876,13 @@
                     </h2>
                     <p class="section-subtitle">Découvrez mes réalisations récentes</p>
                 </div>
-                
+
                 <div class="projects-grid">
                     <!-- E-Commerce Project -->
                     <div class="project-card" data-aos="fade-up">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop" alt="AjouterAuPanier E-Commerce">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
+                                alt="AjouterAuPanier E-Commerce">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="#" class="project-link" aria-label="Voir le projet">
@@ -874,7 +898,7 @@
                             <div class="project-category">E-Commerce</div>
                             <h3>AjouterAuPanier</h3>
                             <p>
-                                Site e-commerce complet avec interface responsive, système de panier en ligne, 
+                                Site e-commerce complet avec interface responsive, système de panier en ligne,
                                 gestion de produits, commandes et utilisateurs. Backend PHP/MySQL optimisé.
                             </p>
                             <div class="project-tech">
@@ -885,17 +909,20 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Portfolio Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="Portfolio Website">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                                alt="Portfolio Website">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="https://aymanennajy.github.io/MyPortfolio/" target="_blank" class="project-link" aria-label="Voir le projet">
+                                    <a href="https://aymanennajy.github.io/MyPortfolio/" target="_blank"
+                                        class="project-link" aria-label="Voir le projet">
                                         <i class="fas fa-external-link-alt"></i>
                                     </a>
-                                    <a href="https://github.com/aymanennajy/MyPortfolio" target="_blank" class="project-link" aria-label="Code source">
+                                    <a href="https://github.com/aymanennajy/MyPortfolio" target="_blank"
+                                        class="project-link" aria-label="Code source">
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </div>
@@ -905,7 +932,7 @@
                             <div class="project-category">Portfolio</div>
                             <h3>Portfolio Personnel</h3>
                             <p>
-                                Portfolio interactif présentant mes compétences, expériences et projets. 
+                                Portfolio interactif présentant mes compétences, expériences et projets.
                                 Design moderne et responsive avec animations fluides.
                             </p>
                             <div class="project-tech">
@@ -916,11 +943,12 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Web Application Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop" alt="Web Application">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop"
+                                alt="Web Application">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="#" class="project-link" aria-label="Voir le projet">
@@ -936,7 +964,7 @@
                             <div class="project-category">Web App</div>
                             <h3>Application Web Full Stack</h3>
                             <p>
-                                Application web complète avec interface utilisateur React, backend PHP 
+                                Application web complète avec interface utilisateur React, backend PHP
                                 et base de données MySQL. Gestion d'utilisateurs et authentification.
                             </p>
                             <div class="project-tech">
@@ -947,11 +975,12 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Dashboard Project -->
                     <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Dashboard">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                                alt="Dashboard">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="#" class="project-link" aria-label="Voir le projet">
@@ -967,7 +996,7 @@
                             <div class="project-category">Dashboard</div>
                             <h3>Dashboard Analytique</h3>
                             <p>
-                                Tableau de bord interactif pour la visualisation de données avec graphiques 
+                                Tableau de bord interactif pour la visualisation de données avec graphiques
                                 dynamiques, statistiques en temps réel et interface utilisateur intuitive.
                             </p>
                             <div class="project-tech">
@@ -979,20 +1008,20 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="projects-cta" data-aos="fade-up">
                     <a href="https://github.com/aymanennajy" target="_blank" class="btn btn-primary">
                         <i class="fab fa-github"></i>
                         <span>Voir Plus sur GitHub</span>
                     </a>
                 </div>
-                
+
                 <div class="section-footer" data-aos="fade-up">
                     <span class="section-tag">&lt;/projects&gt;</span>
                 </div>
             </div>
         </section>
-        
+
         <!-- Contact Section -->
         <section id="contact" class="section contact-section">
             <div class="container">
@@ -1003,17 +1032,17 @@
                     </h2>
                     <p class="section-subtitle">Discutons de votre prochain projet</p>
                 </div>
-                
+
                 <div class="contact-container">
                     <div class="contact-info" data-aos="fade-right">
                         <div class="contact-intro">
                             <h3>Travaillons Ensemble</h3>
                             <p>
-                                Je suis toujours ouvert à de nouvelles opportunités et collaborations. 
+                                Je suis toujours ouvert à de nouvelles opportunités et collaborations.
                                 N'hésitez pas à me contacter pour discuter de votre projet.
                             </p>
                         </div>
-                        
+
                         <div class="contact-details">
                             <div class="contact-item">
                                 <div class="contact-icon">
@@ -1024,7 +1053,7 @@
                                     <a href="mailto:aymanennajy@gmail.com">aymanennajy@gmail.com</a>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -1034,7 +1063,7 @@
                                     <p>Maroc</p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-briefcase"></i>
@@ -1045,56 +1074,59 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="contact-social">
                             <h4>Suivez-moi</h4>
                             <div class="social-links">
-                                <a href="https://github.com/aymanennajy" target="_blank" class="social-link" aria-label="GitHub">
+                                <a href="https://github.com/aymanennajy" target="_blank" class="social-link"
+                                    aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/mohamed-ayman-ennajy/" target="_blank" class="social-link" aria-label="LinkedIn">
+                                <a href="https://www.linkedin.com/in/mohamed-ayman-ennajy/" target="_blank"
+                                    class="social-link" aria-label="LinkedIn">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                                 <a href="mailto:aymanennajy@gmail.com" class="social-link" aria-label="Email">
                                     <i class="fas fa-envelope"></i>
                                 </a>
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="contact-form-container" data-aos="fade-left">
-                        <form class="contact-form" id="contact-form" >
+                        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mpqaawbn"
+                            method="POST">
                             <div class="form-group">
                                 <label for="name">Nom Complet</label>
                                 <input type="text" id="name" name="name" required>
                                 <i class="fas fa-user"></i>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" required>
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="subject">Sujet</label>
                                 <input type="text" id="subject" name="subject" required>
                                 <i class="fas fa-tag"></i>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                                 <i class="fas fa-comment"></i>
                             </div>
-                            
+
                             <button type="submit" class="btn btn-primary btn-submit">
                                 <span>Envoyer le Message</span>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
-                        
+
                         <div class="form-success" id="form-success">
                             <i class="fas fa-check-circle"></i>
                             <h3>Message Envoyé !</h3>
@@ -1102,15 +1134,15 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="section-footer" data-aos="fade-up">
                     <span class="section-tag">&lt;/contact&gt;</span>
                 </div>
             </div>
         </section>
-        
+
     </main>
-    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1123,7 +1155,7 @@
                     </div>
                     <p>Full Stack Developer passionné par la création de solutions web innovantes</p>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Navigation</h4>
                     <a href="#home">Accueil</a>
@@ -1132,14 +1164,15 @@
                     <a href="#projects">Projets</a>
                     <a href="#contact">Contact</a>
                 </div>
-                
+
                 <div class="footer-social">
                     <h4>Réseaux Sociaux</h4>
                     <div class="social-links">
                         <a href="https://github.com/aymanennajy" target="_blank" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/mohamed-ayman-ennajy/" target="_blank" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/mohamed-ayman-ennajy/" target="_blank"
+                            aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="mailto:aymanennajy@gmail.com" aria-label="Email">
@@ -1148,21 +1181,22 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2024 Mohamed Ayman Ennajy. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
     <button id="scrollTopBtn" aria-label="Scroll to top">
-  <i class="fas fa-arrow-up"></i>
-</button>
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    
+
     <!-- Scripts -->
     <script src="js/three-scene.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
-    
+
 </body>
+
 </html>
