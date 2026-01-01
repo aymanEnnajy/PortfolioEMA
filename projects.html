@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mes Projets - Mohamed Ayman Ennajy. Découvrez toutes mes réalisations en développement web.">
+    <title>Mes Projets | Mohamed Ayman Ennajy</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Particles.js for additional effects -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pagination.css">
+</head>
+
+<body data-theme="dark">
+
+    <!-- 3D Canvas Background -->
+    <canvas id="canvas3d"></canvas>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Logo">
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="index.html#about" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span>À Propos</span>
+                </a>
+                <a href="index.html#projects" class="nav-link active">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Projets</span>
+                </a>
+                <a href="index.html#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <div class="nav-controls">
+                <a href="En/projects.html" class="lang-toggle" title="Switch to English">
+                    <span style="font-weight: 700; color: var(--accent-primary);">EN</span>
+                </a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Projects Hero Section -->
+        <section id="projects-hero" class="section active" style="min-height: 40vh; padding-top: 10rem;">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag">&lt;portfolio&gt;</span>
+                    <h1 class="section-title">
+                        Toutes mes <span class="gradient-text">Réalisations</span>
+                    </h1>
+                    <p class="section-subtitle">Une collection complète de mes projets web</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section class="section active" style="padding-top: 0;">
+            <div class="container">
+                <div class="projects-grid">
+                    <!-- Holabouskoura -->
+                    <div class="project-card" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop"
+                                alt="Holabouskoura">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="http://www.holabouskoura.ma" target="_blank" class="project-link"
+                                        aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">News Portal</div>
+                            <h3>Holabouskoura</h3>
+                            <p>Journal électronique d'actualités locales. Interface dynamique pour la diffusion
+                                d'informations en temps réel.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ajouteraupanier -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
+                                alt="ajouteraupanier">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="http://www.ajouteraupanier.ma" target="_blank" class="project-link"
+                                        aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">E-Commerce</div>
+                            <h3>ajouteraupanier</h3>
+                            <p>Site e-commerce complet permettant la gestion de produits, paniers et commandes en ligne.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">WooCommerce</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mister Luxury Auto -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop"
+                                alt="Mister Luxury Auto">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="http://misterluxuryauto.ma" target="_blank" class="project-link"
+                                        aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">News Portal</div>
+                            <h3>Mister Luxury Auto</h3>
+                            <p>Journal électronique spécialisé dans les voitures de luxe et les actualités automobiles.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">WordPress</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dog training -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800&h=600&fit=crop"
+                                alt="Dog training">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/Dog-Training/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Landing Page</div>
+                            <h3>Dog training</h3>
+                            <p>Site vitrine dédié aux services de dressage canin avec présentation des méthodes et
+                                contact.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cesaro -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=600&fit=crop"
+                                alt="Cesaro">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="http://ennajy-ma.free.nf/index.php" target="_blank" class="project-link"
+                                        aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Business</div>
+                            <h3>Cesaro</h3>
+                            <p>Site web spécialisé dans la présentation de carrelages et de robinetteries haut de gamme.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">Showcase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOUMA TRAVEL -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=600&fit=crop"
+                                alt="SOUMA TRAVEL">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/soumatravel/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Travel</div>
+                            <h3>SOUMA TRAVEL</h3>
+                            <p>Plateforme de voyage proposant des circuits touristiques et des services de réservation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ExtraVilla Marrakech -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+                                alt="ExtraVilla Marrakech">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://extravilla-marrakech.vercel.app/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Real Estate</div>
+                            <h3>ExtraVilla Marrakech</h3>
+                            <p>Plateforme immobilière de luxe pour la location et vente de villas d'exception à
+                                Marrakech.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Tailwind</span>
+                                <span class="tech-badge">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empire dental center -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="700">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=600&fit=crop"
+                                alt="Empire dental center">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/empire-dental/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Medical</div>
+                            <h3>Empire dental center</h3>
+                            <p>Site professionnel pour un centre dentaire moderne avec présentation des soins et équipe.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ponctuel Voyage -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="800">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop"
+                                alt="Ponctuel Voyage">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/ponctuelVoyage/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Travel</div>
+                            <h3>Ponctuel Voyage</h3>
+                            <p>Site vitrine pour une agence de voyage proposant des services personnalisés et ponctuels.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ez HORIZONS -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="900">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
+                                alt="Ez HORIZONS">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/ezhorizon/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Real Estate</div>
+                            <h3>Ez HORIZONS</h3>
+                            <p>Site d'agence immobilière moderne mettant en valeur des propriétés d'exception et
+                                services.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">SCSS</span>
+                                <span class="tech-badge">JS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gestion d'Étude -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop"
+                                alt="Gestion d'Étude">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://aymanennajy.github.io/Gestion-Detude/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Education</div>
+                            <h3>Gestion d'Étude</h3>
+                            <p>Application de gestion d'études permettant le suivi des cours et des performances
+                                académiques.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JS</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Studio Manager -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=600&fit=crop"
+                                alt="Studio Manager">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://studio-manager.ayman93011.workers.dev/" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">Automation</div>
+                            <h3>Studio Manager</h3>
+                            <p>Outil d'automatisation pour studios avec intégration n8n, Express et Node.js pour une
+                                gestion intelligente.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">n8n</span>
+                                <span class="tech-badge">Cloudflare</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CRUD Cats -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&h=600&fit=crop"
+                                alt="CRUD Cats">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="https://crudcats.ayman93011.workers.dev/login" target="_blank"
+                                        class="project-link" aria-label="Voir le site">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">CRUD App</div>
+                            <h3>CRUD Cats</h3>
+                            <p>Application de gestion (CRUD) développée durant une formation, utilisant Node.js et MySQL
+                                pour le stockage.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">Express</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container" data-aos="fade-up">
+                    <button id="prevPage" class="pagination-btn" aria-label="Page précédente">
+                        <i class="fas fa-chevron-left"></i>
+                        <span class="btn-text">Précédent</span>
+                    </button>
+                    <div id="pageNumbers" class="page-numbers">
+                        <!-- Les numéros de page seront générés ici par JS -->
+                    </div>
+                    <button id="nextPage" class="pagination-btn" aria-label="Page suivante">
+                        <span class="btn-text">Suivant</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="projects-cta" data-aos="fade-up" style="margin-top: 5rem;">
+                    <a href="index.html" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Retour à l'Accueil</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mohamed Ayman Ennajy. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Pagination Logic - Professional Implementation
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsPerPage = 6;
+            let currentPage = 1;
+            const projectCards = Array.from(document.querySelectorAll('.projects-grid .project-card'));
+            const totalPages = Math.ceil(projectCards.length / projectsPerPage);
+
+            const prevBtn = document.getElementById('prevPage');
+            const nextBtn = document.getElementById('nextPage');
+            const pageNumbersContainer = document.getElementById('pageNumbers');
+
+            function showPage(page) {
+                const grid = document.querySelector('.projects-grid');
+
+                // Elegant Fade Out Transition
+                grid.style.opacity = '0';
+                grid.style.transform = 'translateY(20px)';
+                grid.style.transition = 'all 0.4s ease';
+
+                setTimeout(() => {
+                    currentPage = page;
+                    const start = (currentPage - 1) * projectsPerPage;
+                    const end = start + projectsPerPage;
+
+                    projectCards.forEach((card, index) => {
+                        if (index >= start && index < end) {
+                            card.style.display = 'block';
+                            if (window.AOS) {
+                                card.classList.remove('aos-animate');
+                                setTimeout(() => {
+                                    card.classList.add('aos-animate');
+                                }, 50);
+                            }
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    updatePagination();
+
+                    // Smooth Fade In
+                    grid.style.opacity = '1';
+                    grid.style.transform = 'translateY(0)';
+
+                    // Intelligent Scroll to top of section
+                    const heroSection = document.getElementById('projects-hero');
+                    const offset = heroSection.offsetTop - 100;
+                    window.scrollTo({ top: offset, behavior: 'smooth' });
+                }, 400);
+            }
+
+            function updatePagination() {
+                // Button States
+                if (prevBtn) prevBtn.disabled = currentPage === 1;
+                if (nextBtn) nextBtn.disabled = currentPage === totalPages;
+
+                // Dynamic Page Number Generation
+                if (pageNumbersContainer) {
+                    pageNumbersContainer.innerHTML = '';
+                    for (let i = 1; i <= totalPages; i++) {
+                        const btn = document.createElement('button');
+                        btn.innerText = i;
+                        btn.classList.add('page-num');
+                        if (i === currentPage) btn.classList.add('active');
+                        btn.addEventListener('click', () => {
+                            if (i !== currentPage) showPage(i);
+                        });
+                        pageNumbersContainer.appendChild(btn);
+                    }
+                }
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (currentPage > 1) showPage(currentPage - 1);
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (currentPage < totalPages) showPage(currentPage + 1);
+                });
+            }
+
+            // Initial Display
+            showPage(1);
+        });
+    </script>
+
+</body>
+
+</html>

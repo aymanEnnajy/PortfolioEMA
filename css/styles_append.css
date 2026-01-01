@@ -1,0 +1,31 @@
+/* Existing styles... appending missing premium styles */
+
+/* === DECORATION ICONS === */
+.decoration-icon {
+    font-size: 1.5rem;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
+}
+
+.decoration-icon:nth-child(1) {
+    color: #61dafb;
+    animation-delay: 0s;
+}
+
+.decoration-icon:nth-child(2) {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    animation-delay: 2s;
+}
+
+.decoration-icon:nth-child(3) {
+    color: #f472b6;
+    font-size: 1rem;
+    position: absolute;
+    left: -15px;
+    bottom: 0;
+    animation-delay: 4s;
+}
