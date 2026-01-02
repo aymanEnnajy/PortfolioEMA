@@ -18,11 +18,12 @@ class ThreeScene {
 
         // Configuration des icônes
         this.iconConfig = [
-            { icon: '\uf41b', color: '#61dafb', name: 'react', position: [-50, 30, -50] }, // React
             { icon: '\uf108', color: '#6366f1', name: 'desktop', position: [50, -30, -40] }, // Desktop
             { icon: '\uf121', color: '#a855f7', name: 'code', position: [-40, -40, -60] },  // Code
             { icon: '\uf109', color: '#ec4899', name: 'laptop', position: [60, 40, -70] }   // Laptop
         ];
+
+        this.shapes = [];
 
         this.init();
     }
@@ -52,7 +53,9 @@ class ThreeScene {
 
         // Create 3D elements
         this.createParticles();
+        this.createParticles();
         this.createGeometries();
+        this.createGeometricShapes();
         this.createLights();
 
         // Event listeners
@@ -159,6 +162,50 @@ class ThreeScene {
         });
     }
 
+    createGeometricShapes() {
+        const shapesConfig = [
+            { type: 'Icosahedron', color: '#61dafb', position: [-50, 30, -50] }, // Replace React position
+            { type: 'Octahedron', color: '#ffcc00', position: [-70, 0, -80] },
+            { type: 'Tetrahedron', color: '#ff6b6b', position: [30, 60, -90] }
+        ];
+
+        shapesConfig.forEach(config => {
+            let geometry;
+            switch (config.type) {
+                case 'Icosahedron':
+                    geometry = new THREE.IcosahedronGeometry(10, 0);
+                    break;
+                case 'Octahedron':
+                    geometry = new THREE.OctahedronGeometry(8, 0);
+                    break;
+                case 'Tetrahedron':
+                    geometry = new THREE.TetrahedronGeometry(8, 0);
+                    break;
+            }
+
+            const material = new THREE.MeshPhongMaterial({
+                color: config.color,
+                wireframe: true,
+                transparent: true,
+                opacity: 0.6,
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(...config.position);
+
+            mesh.userData.originalPosition = { ...mesh.position };
+            mesh.userData.rotationSpeed = {
+                x: Math.random() * 0.02,
+                y: Math.random() * 0.03,
+                z: Math.random() * 0.01
+            };
+            mesh.userData.floatOffset = Math.random() * Math.PI * 2;
+
+            this.shapes.push(mesh);
+            this.scene.add(mesh);
+        });
+    }
+
     createLights() {
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
         this.scene.add(ambientLight);
@@ -213,6 +260,17 @@ class ThreeScene {
             // Complex floating movement
             mesh.position.y = mesh.userData.originalPosition.y + Math.sin(time + mesh.userData.floatOffset) * 4;
             mesh.position.x = mesh.userData.originalPosition.x + Math.cos(time * 0.5 + mesh.userData.floatOffset) * 2;
+        });
+
+        // Animate shapes
+        this.shapes.forEach(mesh => {
+            mesh.rotation.x += mesh.userData.rotationSpeed.x;
+            mesh.rotation.y += mesh.userData.rotationSpeed.y;
+            mesh.rotation.z += mesh.userData.rotationSpeed.z;
+
+            // Float movement
+            mesh.position.y = mesh.userData.originalPosition.y + Math.sin(time + mesh.userData.floatOffset) * 5;
+            mesh.position.x = mesh.userData.originalPosition.x + Math.cos(time * 0.7 + mesh.userData.floatOffset) * 3;
         });
 
         if (this.renderer && this.scene && this.camera) {
