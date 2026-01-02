@@ -244,19 +244,19 @@ body {
 }
 
 .nav-logo img {
-    height: 25vh;
+    height: 15vh;
     margin: -35px 0px -38px 0px;
     width: auto;
     transition: all var(--transition-base);
 }
 
 .navbar.scrolled .nav-logo img {
-    height: 35px;
+    height: 16vh;
 }
 
 @media (max-width: 768px) {
     .nav-logo img {
-        height: 20vh;
+        height: 17vh;
     }
 }
 
