@@ -1932,15 +1932,3 @@ body {
     transform: scale(1.1);
 }
 
-
-.lang-toggle{
-    border-radius: 20px;
-    background-color: #ebebeb;
-    width: 2vw;
-    height: 6vh;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
-}
