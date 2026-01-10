@@ -19,20 +19,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </noscript>
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <!-- GSAP for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- Particles.js for additional effects -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
@@ -59,7 +68,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/images/logo.png" alt="Logo">
+                <img src="assets/images/logo.png" alt="Logo" width="150" height="50" style="height: auto;">
             </div>
 
             <div class="nav-menu" id="nav-menu">
@@ -224,9 +233,10 @@
                         <div class="about-image-wrapper">
                             <div class="image-border"></div>
                             <div class="about-image">
-                                <img src="assets/images/myface.png" alt="Mohamed Ayman Ennajy">
+                                <img src="assets/images/myface.png" alt="Mohamed Ayman Ennajy" loading="lazy"
+                                    width="400" height="400">
                             </div>
-                            
+
                         </div>
 
                         <div class="stats-grid">
@@ -886,7 +896,7 @@
                     <div class="project-card" data-aos="fade-up">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop"
-                                alt="Holabouskoura">
+                                alt="Holabouskoura" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="http://www.holabouskoura.ma" target="_blank" class="project-link"
@@ -915,7 +925,7 @@
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop"
-                                alt="AjouterAuPanier">
+                                alt="AjouterAuPanier" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="http://www.ajouteraupanier.ma" target="_blank" class="project-link"
@@ -944,7 +954,7 @@
                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
-                                alt="Ez HORIZONS">
+                                alt="Ez HORIZONS" loading="lazy" width="800" height="600">
                             <div class="project-overlay">
                                 <div class="project-links">
                                     <a href="https://aymanennajy.github.io/ezhorizon/" target="_blank"
@@ -1154,9 +1164,9 @@
 
 
     <!-- Scripts -->
-    <script src="js/three-scene.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/main.js"></script>
+    <script defer src="js/three-scene.js"></script>
+    <script defer src="js/animations.js"></script>
+    <script defer src="js/main.js"></script>
 
 </body>
 
