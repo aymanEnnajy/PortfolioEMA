@@ -502,3 +502,10 @@ scrollTopBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+//Cache 
+ if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js");
+    });
+  }
