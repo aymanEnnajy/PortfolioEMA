@@ -56,13 +56,411 @@
     <div id="particles-js"></div>
 
     <!-- Preloader -->
-    <div id="preloader">
-        <div class="loader-container">
-            <div class="loader"></div>
-            <div class="loader-text">Loading<span class="dots"></span></div>
-            <div class="loader-percentage">0%</div>
-        </div>
+    <style>
+  /* Preloader full screen */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    font-family: 'SF Mono', 'Cascadia Code', monospace;
+    overflow: hidden;
+  }
+
+  .loader-container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .loader-text {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #58a6ff;
+    text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+    letter-spacing: 1px;
+  }
+
+  .dots::after {
+    content: '';
+    animation: typing 1.5s infinite steps(4, end);
+  }
+
+  @keyframes typing {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+  }
+
+  .loader-percentage {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #7ee787;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(126, 231, 135, 0.3);
+  }
+
+  /* Progress bar */
+  .progress-container {
+    width: 300px;
+    height: 4px;
+    background: rgba(88, 166, 255, 0.1);
+    border-radius: 2px;
+    margin: 25px auto 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #58a6ff, #7ee787);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    position: relative;
+  }
+
+  .progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shine 2s infinite;
+  }
+
+  @keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Three.js canvas */
+  #three-container {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  /* Code matrix background */
+  .code-matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.15;
+  }
+
+  .matrix-digit {
+    position: absolute;
+    color: #7ee787;
+    font-size: 1.2rem;
+    font-family: monospace;
+    opacity: 0;
+    animation: matrixFall linear infinite;
+    text-shadow: 0 0 8px #7ee787;
+  }
+
+  @keyframes matrixFall {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  /* Status messages */
+  .status-message {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #8b949e;
+    height: 20px;
+    min-width: 300px;
+  }
+</style>
+
+<div id="preloader">
+  <div class="code-matrix" id="matrixContainer"></div>
+  <div class="loader-container">
+    <div id="three-container"></div>
+    <div class="loader-text">Compiling<span class="dots"></span></div>
+    <div class="loader-percentage">0%</div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
     </div>
+    <div class="status-message" id="statusMessage">Initializing modules...</div>
+  </div>
+</div>
+
+<!-- Three.js + GLTFLoader for advanced 3D -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.154.0/examples/js/loaders/GLTFLoader.js"></script>
+
+<script>
+  // Create matrix background
+  const matrixContainer = document.getElementById('matrixContainer');
+  const chars = '01{}[]<>()/\\=+-*';
+  
+  function createMatrixDigit() {
+    const digit = document.createElement('div');
+    digit.className = 'matrix-digit';
+    digit.textContent = chars[Math.floor(Math.random() * chars.length)];
+    digit.style.left = `${Math.random() * 100}%`;
+    digit.style.animationDuration = `${Math.random() * 3 + 2}s`;
+    digit.style.animationDelay = `${Math.random() * 2}s`;
+    digit.style.fontSize = `${Math.random() * 10 + 14}px`;
+    matrixContainer.appendChild(digit);
+    
+    setTimeout(() => digit.remove(), 5000);
+  }
+  
+  // Create matrix digits continuously
+  setInterval(createMatrixDigit, 100);
+  
+  // Enhanced Three.js scene
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ 
+    antialias: true, 
+    alpha: true,
+    powerPreference: "high-performance"
+  });
+  
+  renderer.setSize(180, 180);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  
+  document.getElementById('three-container').appendChild(renderer.domElement);
+  
+  // Create developer-themed 3D object - Binary Tree structure
+  const createBinaryTree = (depth = 3, position = new THREE.Vector3(0, 0, 0)) => {
+    const group = new THREE.Group();
+    
+    // Create central node
+    const nodeGeometry = new THREE.SphereGeometry(0.3, 16, 16);
+    const nodeMaterial = new THREE.MeshStandardMaterial({ 
+      color: 0x58a6ff,
+      emissive: 0x0a3069,
+      emissiveIntensity: 0.3,
+      metalness: 0.8,
+      roughness: 0.2
+    });
+    const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
+    node.castShadow = true;
+    group.add(node);
+    
+    if (depth > 0) {
+      // Create branches
+      const branchMaterial = new THREE.MeshStandardMaterial({ 
+        color: 0x7ee787,
+        emissive: 0x238636,
+        emissiveIntensity: 0.2,
+        metalness: 0.6,
+        roughness: 0.3
+      });
+      
+      // Left branch
+      const leftBranch = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.05, 0.05, 1.5),
+        branchMaterial
+      );
+      leftBranch.position.set(-0.8, -0.75, 0);
+      leftBranch.rotation.z = 0.5;
+      leftBranch.castShadow = true;
+      group.add(leftBranch);
+      
+      // Right branch
+      const rightBranch = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.05, 0.05, 1.5),
+        branchMaterial
+      );
+      rightBranch.position.set(0.8, -0.75, 0);
+      rightBranch.rotation.z = -0.5;
+      rightBranch.castShadow = true;
+      group.add(rightBranch);
+      
+      // Add child nodes recursively
+      const leftChild = createBinaryTree(depth - 1, new THREE.Vector3(-1.5, -1.5, 0));
+      leftChild.position.set(-1.5, -1.5, 0);
+      group.add(leftChild);
+      
+      const rightChild = createBinaryTree(depth - 1, new THREE.Vector3(1.5, -1.5, 0));
+      rightChild.position.set(1.5, -1.5, 0);
+      group.add(rightChild);
+    }
+    
+    return group;
+  };
+  
+  const binaryTree = createBinaryTree(3);
+  scene.add(binaryTree);
+  
+  // Add glowing particles
+  const particlesGeometry = new THREE.BufferGeometry();
+  const particlesCount = 100;
+  const posArray = new Float32Array(particlesCount * 3);
+  
+  for(let i = 0; i < particlesCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 10;
+  }
+  
+  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  
+  const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.05,
+    color: 0x58a6ff,
+    transparent: true,
+    opacity: 0.6
+  });
+  
+  const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+  scene.add(particlesMesh);
+  
+  // Enhanced lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+  scene.add(ambientLight);
+  
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(5, 5, 5);
+  directionalLight.castShadow = true;
+  scene.add(directionalLight);
+  
+  const pointLight = new THREE.PointLight(0x58a6ff, 0.8, 100);
+  pointLight.position.set(2, 2, 2);
+  scene.add(pointLight);
+  
+  const pointLight2 = new THREE.PointLight(0x7ee787, 0.5, 100);
+  pointLight2.position.set(-2, -2, 2);
+  scene.add(pointLight2);
+  
+  camera.position.z = 8;
+  
+  // Animation
+  let time = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    
+    time += 0.01;
+    
+    // Rotate tree
+    binaryTree.rotation.y = time * 0.3;
+    binaryTree.rotation.x = Math.sin(time * 0.5) * 0.1;
+    
+    // Animate particles
+    particlesMesh.rotation.y = time * 0.1;
+    particlesMesh.rotation.x = Math.sin(time * 0.3) * 0.1;
+    
+    // Pulse lights
+    pointLight.intensity = 0.8 + Math.sin(time * 2) * 0.2;
+    pointLight2.intensity = 0.5 + Math.sin(time * 1.5) * 0.2;
+    
+    renderer.render(scene, camera);
+  }
+  animate();
+  
+  // Enhanced loading simulation
+  let percent = 0;
+  const loaderPercent = document.querySelector('.loader-percentage');
+  const progressBar = document.getElementById('progressBar');
+  const statusMessage = document.getElementById('statusMessage');
+  const messages = [
+    "Initializing modules...",
+    "Loading dependencies...",
+    "Compiling TypeScript...",
+    "Optimizing bundles...",
+    "Running tests...",
+    "Building UI components...",
+    "Connecting to API...",
+    "Caching assets...",
+    "Finalizing build...",
+    "Ready!"
+  ];
+  
+  const interval = setInterval(() => {
+    // Smart progress increment - slower at start and end
+    let increment;
+    if (percent < 20) increment = 0.8;
+    else if (percent < 70) increment = 1.2;
+    else if (percent < 90) increment = 0.6;
+    else increment = 0.3;
+    
+    percent += increment;
+    
+    // Update display
+    loaderPercent.textContent = `${Math.min(Math.floor(percent), 100)}%`;
+    progressBar.style.width = `${Math.min(percent, 100)}%`;
+    
+    // Update status message based on progress
+    const messageIndex = Math.floor(percent / (100 / messages.length));
+    if (messageIndex < messages.length) {
+      statusMessage.textContent = messages[messageIndex];
+    }
+    
+    // Change loader text based on progress
+    const loaderText = document.querySelector('.loader-text');
+    if (percent < 30) {
+      loaderText.textContent = "Initializing";
+    } else if (percent < 60) {
+      loaderText.textContent = "Compiling";
+    } else if (percent < 85) {
+      loaderText.textContent = "Optimizing";
+    } else if (percent < 100) {
+      loaderText.textContent = "Finalizing";
+    }
+    
+    // When loading is complete
+    if (percent >= 100) {
+      clearInterval(interval);
+      loaderPercent.textContent = "100%";
+      progressBar.style.width = "100%";
+      statusMessage.textContent = "Ready!";
+      loaderText.textContent = "Complete";
+      
+      // Fade out animation
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          // Dispatch custom event for other scripts
+          window.dispatchEvent(new Event('preloaderComplete'));
+        }, 500);
+      }, 800);
+    }
+  }, 40);
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    camera.aspect = 1;
+    camera.updateProjectionMatrix();
+    renderer.setSize(180, 180);
+  });
+</script>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
