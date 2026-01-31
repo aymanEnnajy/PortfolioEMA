@@ -450,7 +450,7 @@ const consoleSignature = () => {
     console.log('%c🚀 Portfolio by Mohamed Ayman Ennajy', styles);
     console.log('%cFull Stack Developer | JavaScript | React | PHP | Python', 'color: #8b5cf6; font-size: 12px;');
     console.log('%c💼 Looking for opportunities? Let\'s connect!', 'color: #10b981; font-size: 12px;');
-    console.log('%c📧 aymanennajy@gmail.com', 'color: #f59e0b; font-size: 12px;');
+    console.log('%c📧 ennajymohamedayman@gmail.com', 'color: #f59e0b; font-size: 12px;');
 };
 
 // === INITIALIZE APP ===

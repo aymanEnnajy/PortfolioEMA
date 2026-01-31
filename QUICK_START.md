@@ -253,7 +253,7 @@ const particleCount = 200; // Au lieu de 500
 
 - 📖 **Documentation complète :** Voir `README.md`
 - 🐛 **Bug ?** Vérifier la console (F12)
-- 💬 **Question ?** aymanennajy@gmail.com
+- 💬 **Question ?** ennajymohamedayman@gmail.com
 
 ---
 

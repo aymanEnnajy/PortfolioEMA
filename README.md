@@ -434,9 +434,9 @@ Ce projet est sous licence MIT. Vous êtes libre de l'utiliser, le modifier et l
 
 **Mohamed Ayman Ennajy**
 - Full Stack Developer
-- 📧 Email : aymanennajy@gmail.com
+- 📧 Email : ennajymohamedayman@gmail.com
 - 🐙 GitHub : [@aymanennajy](https://github.com/aymanennajy)
-- 💼 LinkedIn : [Ayman Ennajy](https://linkedin.com/in/ayman-ennajy)
+- 💼 LinkedIn : [Ayman Ennajy](https://www.linkedin.com/in/mohamed-ayman-ennajy/)
 
 ---
 
