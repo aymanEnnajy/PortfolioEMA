@@ -1731,6 +1731,10 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding-left:18px;
+    }
+    .footer-logo img{
+        width: 20%;
     }
 }
 
