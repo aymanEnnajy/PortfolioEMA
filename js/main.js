@@ -228,112 +228,130 @@ class PortfolioApp {
             document.body.style.transition = '';
         }, 500);
     }
+// ===============================
+// CONTACT FORM – FORMSPREE
+// ===============================
 
-    // === CONTACT FORM ===
-    setupContactForm() {
-        if (!this.contactForm) return;
+setupContactForm() {
+    if (!this.contactForm) return;
 
-        this.contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleFormSubmission();
-        });
+    this.formSuccess = document.getElementById('form-success');
+    this.submitBtn = this.contactForm.querySelector('.btn-submit');
 
-        // Input animations
-        const inputs = this.contactForm.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('focus', (e) => {
-                gsap.to(e.target, {
-                    scale: 1.02,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-
-            input.addEventListener('blur', (e) => {
-                gsap.to(e.target, {
-                    scale: 1,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-        });
+    if (this.formSuccess) {
+        this.formSuccess.style.display = 'none';
     }
 
-    handleFormSubmission() {
-        const formData = new FormData(this.contactForm);
-        const data = Object.fromEntries(formData);
+    // SUBMIT
+    this.contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // 🚫 stop Formspree redirect
+        this.handleFormSubmission();
+    });
 
-        // Show loading state
-        const submitBtn = this.contactForm.querySelector('.btn-submit');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
-        submitBtn.disabled = true;
+    // INPUT ANIMATIONS
+    const inputs = this.contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', (e) => {
+            gsap.to(e.target, {
+                scale: 1.02,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
 
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            console.log('Form submitted:', data);
+        input.addEventListener('blur', (e) => {
+            gsap.to(e.target, {
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    });
+}
 
-            // Show success message
+handleFormSubmission() {
+    const originalText = this.submitBtn.innerHTML;
+
+    this.submitBtn.innerHTML =
+        '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    this.submitBtn.disabled = true;
+
+    fetch(this.contactForm.action, {
+        method: 'POST',
+        body: new FormData(this.contactForm),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
             this.showFormSuccess();
-
-            // Reset form
             this.contactForm.reset();
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    }
+        } else {
+            alert('❌ Message not sent. Please try again.');
+        }
+    })
+    .catch(() => {
+        alert('❌ Network error. Please try again.');
+    })
+    .finally(() => {
+        this.submitBtn.innerHTML = originalText;
+        this.submitBtn.disabled = false;
+    });
+}
 
-    showFormSuccess() {
-        const form = document.querySelector('.contact-form');
-        const success = document.getElementById('form-success');
+showFormSuccess() {
+    const form = this.contactForm;
+    const success = this.formSuccess;
 
-        gsap.to(form, {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.3,
-            onComplete: () => {
-                form.style.display = 'none';
-                success.classList.add('show');
-                success.style.display = 'block';
+    gsap.to(form, {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.3,
+        onComplete: () => {
+            form.style.display = 'none';
+            success.style.display = 'block';
 
-                gsap.from(success, {
-                    opacity: 0,
-                    scale: 0.9,
-                    duration: 0.5,
-                    ease: 'back.out(1.7)'
-                });
+            gsap.from(success, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.5,
+                ease: 'back.out(1.7)'
+            });
 
-                // Reset after 5 seconds
-                setTimeout(() => {
-                    this.hideFormSuccess();
-                }, 5000);
-            }
-        });
-    }
+            // ⏱ Show for 5 seconds
+            setTimeout(() => {
+                this.hideFormSuccess();
+            }, 5000);
+        }
+    });
+}
 
-    hideFormSuccess() {
-        const form = document.querySelector('.contact-form');
-        const success = document.getElementById('form-success');
+hideFormSuccess() {
+    const form = this.contactForm;
+    const success = this.formSuccess;
 
-        gsap.to(success, {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.3,
-            onComplete: () => {
-                success.classList.remove('show');
-                success.style.display = 'none';
-                form.style.display = 'block';
+    gsap.to(success, {
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.3,
+        onComplete: () => {
+            success.style.display = 'none';
+            form.style.display = 'block';
 
-                gsap.to(form, {
+            gsap.fromTo(form,
+                { opacity: 0, scale: 0.95 },
+                {
                     opacity: 1,
                     scale: 1,
                     duration: 0.5,
                     ease: 'back.out(1.7)'
-                });
-            }
-        });
-    }
-}
+                }
+            );
+        }
+    });
+}}
+
 
 // === UTILITY FUNCTIONS ===
 
